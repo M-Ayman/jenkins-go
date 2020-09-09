@@ -1,0 +1,86 @@
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1599612221.7763019,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-m-ayman-jenkins-go-master-g6z9h-zlvmx[0m
+{"level":"info","ts":1599612234.6834657,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/*******/jenkins-go.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1599612234.6835744,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1599612234.7259383,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/jenkins-go main.go
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0909 00:43:58.104223      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0000] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0001] No base image, nothing to extract            
+[36mINFO[0m[0001] Built cross stage deps: map[]                
+[36mINFO[0m[0001] No base image, nothing to extract            
+[36mINFO[0m[0001] Executing 0 build triggers                   
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Checking for cached layer gcr.io/rapid-smithy-200420/cache:fa9ec51373ce2c68645711a9ee3162c3eb89bfaa6868a70c5ba67a046126fc8f... 
+[36mINFO[0m[0001] No cached layer found for cmd COPY ./bin/ /  
+[36mINFO[0m[0001] Unpacking rootfs as cmd COPY ./bin/ / requires it. 
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] ENTRYPOINT ["/jenkins-go"]                   
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] COPY ./bin/ /                                
+[36mINFO[0m[0001] Resolving 2 paths                            
+[36mINFO[0m[0001] Taking snapshot of files...                  
+[36mINFO[0m[0001] Pushing layer gcr.io/rapid-smithy-200420/cache:fa9ec51373ce2c68645711a9ee3162c3eb89bfaa6868a70c5ba67a046126fc8f to cache now 
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/jenkins-go to an unshallow repository
+Generating change log from git ref 3663e97f2254abdd848e76292ca1250252d91f00 => 20da5d4cb52d3d7571ae854e0ab46c6c75e9952c
+Associating user mohamed-ayman in users.jenkins.io with email m.ayman2612@gmail.com to git GitProvider user with login mohamed-ayman-0 as emails match
+Adding label jenkins.io/git-github-userid=mohamed-ayman-0 to user mohamed-ayman in users.jenkins.io
+Finding issues in commit messages using git format
+WARNING: No release found for *******/jenkins-go and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/*******/jenkins-go/releases/tag/v0.0.1
+generated: /workspace/source/charts/jenkins-go/templates/release.yaml
+Created Release jenkins-go-0-0-1 resource in namespace **
+Updating PipelineActivity m-ayman-jenkins-go-master-1 with version 0.0.1
+Updated PipelineActivities m-ayman-jenkins-go-master-1 with release notes URL: https://github.com/*******/jenkins-go/releases/tag/v0.0.1
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file jenkins-go-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mm-ayman-jenkins-go-master-g6z9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app jenkins-go version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-glasswall-staging/pull/1
+Added label updatebot to Pull Request https://github.com/*******/environment-glasswall-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-glasswall-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-glasswall-staging/pull/1
+Pull Request https://github.com/*******/environment-glasswall-staging/pull/1 is merged at sha 0d72b230189111307dcc7a7c5bae43b3ab68e860
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names jenkins-go, **-jenkins-go, **-staging-jenkins-go
